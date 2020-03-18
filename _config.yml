@@ -36,7 +36,7 @@ paginate: 5
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
 
 # Separator
-#excerpt_separator: <!-- more -->
+excerpt_separator: <!-- more -->
 
 # Code Highlighter
 ## 'pygments' is unsupported on GitHub Pages now.
@@ -286,7 +286,7 @@ links_title: 友链
 links_layout: block
 links_layout: inline
 links:
-  前端: http://blog.ifthat.com
+    
 
 
 # ---------------------------------------------------------------
@@ -306,7 +306,7 @@ excerpt_description: true
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
   enable: false
-  length: 150
+  length: 20
 
 # Post meta display settings
 post_meta:
