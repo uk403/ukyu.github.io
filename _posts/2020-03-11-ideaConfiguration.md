@@ -2,7 +2,9 @@
 title: idea基本配置
 layout: post
 date: 2020-03-11
-tags: idea
+tags: 
+- idea
+- config
 categories:
 - programmer
 ---
