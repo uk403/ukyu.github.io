@@ -1,5 +1,5 @@
 ---
-title: Jenkins使用过程中遇到的麻烦
+title: Java8新特性
 layout: post
 date: 2020-04-18
 tags: 
@@ -26,7 +26,7 @@ categories:
 
 Consumer<T>:
 
-​	void accept(T t);
+​	void accept(T t);g
 
 Supplier<T>:
 
