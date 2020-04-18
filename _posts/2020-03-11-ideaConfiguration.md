@@ -14,11 +14,11 @@ categories:
 ---
 ## 配置
 1. 滚轮缩放字体
-    ![滚轮配置](/assets/images/blog/2020-03-11-ideaConfiguration-wheel.png)
+    ![滚轮配置](/assets/images/blog/2020-03-11-ideaConfiguration/wheel.png)
 2. 取消大小写敏感
-    ![取消大小写](/assets/images/blog/2020-03-11-ideaConfiguration-cancelCase.png)
+    ![取消大小写](/assets/images/blog/2020-03-11-ideaConfiguration/cancelCase.png)
 3. 代码文件头部
-    ![文件头部](/assets/images/blog/2020-03-11-ideaConfiguration-fileHead.png)
+    ![文件头部](/assets/images/blog/2020-03-11-ideaConfiguration/fileHead.png)
 
 ## 插件
 1. lombok

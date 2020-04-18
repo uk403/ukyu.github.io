@@ -33,9 +33,9 @@ categories:
 ## 使用Docker安装Jenkins的注意事项！！！
 1. 我用的是docker上的官方Jenkins仓库，下载插件时，它会报“版本太低了”的问题。主要原因是Jenkins的仓库被废弃了 [详情](https://jenkins.io/zh/blog/2018/12/10/the-official-Docker-image/)。只需要改成[正确的仓库](https://hub.docker.com/r/jenkins/jenkins/ )就可以了。
    
-2. 出现问题: ***"/usr/share/gradles is not a directory on the Jenkins master (but perhaps it exists on some agents)"***   ![未映射到容器内](/assets/images/blog/2020-04-01-Jenkins-Config-MapFile.png)此时需要你把会用到的宿主文件映射到容器内
+2. 出现问题: ***"/usr/share/gradles is not a directory on the Jenkins master (but perhaps it exists on some agents)"***   ![未映射到容器内](/assets/images/blog/2020-04-01-Jenkins-Config/MapFile.png)此时需要你把会用到的宿主文件映射到容器内
 
-3. 问题：***permission deny***![权限拒绝](/assets/images/blog/2020-04-01-Jenkins-Config-permission.png)
+3. 问题：***permission deny***![权限拒绝](/assets/images/blog/2020-04-01-Jenkins-Config/permission.png)
    方法：
    1. 启动Jenkins时加  `-u root`
    2. `chmod 777` Jenkins的主文件 (没试过，不知可行性，也不推荐用) 
@@ -44,7 +44,7 @@ categories:
 ---
 以上解决方案不一定是最佳方案
 
-总的来说，体验了Jenkins的'一站式服务'。![一站式服务](/assets/images/blog/2020-04-01-Jenkins-Config-UsePurpose.png)
+总的来说，体验了Jenkins的'一站式服务'。![一站式服务](/assets/images/blog/2020-04-01-Jenkins-Config/UsePurpose.png)
 
 有个问题待解决，我使用的是云服务器的Docker拉取的Jenkins镜像。我想运行，Gradle构建的jar文件，我是通过Jenkins插件 ***Publish Over SSH***，将jar文件传到云服务器(同一个)的某个路径并运行它。速度太慢，而且本来是**同一个云服务器**，应该用不着SSH。**不知有什么好的办法，望告知，谢谢**
 
