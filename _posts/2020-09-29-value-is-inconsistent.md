@@ -104,4 +104,4 @@ protected static String legacyManglePropertyName(String basename,
 遇到这个情况的最优解就是自己创建getter、setter；**不到万不得已，创建字段还是要符合Bean规范**
 
 ---
-哪裏不對，請和我討論，謝謝啦
+如果有不对的地方或建议，请指出，谢谢啦
