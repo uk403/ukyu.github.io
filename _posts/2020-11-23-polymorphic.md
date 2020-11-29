@@ -101,6 +101,8 @@ class com.ukyu.base.Car
   getVehicle(vehicle);
 ```
 
+***多态只能发生在方法调用时***
+
 ---
 **对自己的现状不满意只有付出更多的努力去改变它**
 
