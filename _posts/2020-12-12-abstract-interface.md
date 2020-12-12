@@ -53,7 +53,7 @@ class FlashLight extends Light {
  拨动开关关闭~
 ```
 结合
-[多态]('https://uk403.github.io/programmer/2020/11/23/polymorphic/')
+[多态](https://uk403.github.io/programmer/2020/11/23/polymorphic/)
 食用更佳
 
 可以看到派生类使用了基类共享的**getBrightness**的方法，我们实现了抽象方法**turn**(**若不实现的话，其派生类还是一个抽象类**)
