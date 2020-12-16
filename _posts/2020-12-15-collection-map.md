@@ -9,11 +9,11 @@ categories:
 ---
 Java集合简略版： 
 
-![Java集合简略版](../assets/images/blog/2020-12-15-Collection-Map/java-collection-framework-hierarchy.jpg)
+![Java集合简略版](/assets/images/blog/2020-12-15-Collection-Map/java-collection-framework-hierarchy.jpg)
 
 Java集合详细版：
 
-![Java集合详细版](../assets/images/blog/2020-12-15-Collection-Map/ContainerTaxonomy.png)
+![Java集合详细版](/assets/images/blog/2020-12-15-Collection-Map/ContainerTaxonomy.png)
 
 不说太多，集合是日常开发基本上是天天都需要用到的东西，仔细地去阅读几个常用的实现还是很有必要的；
 
