@@ -139,7 +139,7 @@ list.add(2d);
 
 
 ## 其中的一些方法
-1. System.arrayCopy()
+* System.arrayCopy()
 
 ```java 
     public void add(int index, E element) {
@@ -175,7 +175,7 @@ list.add(2d);
   // 将src从src[srcPos] -- src[srcPos + length]的元素 复制给
   // dest从dest[destPos] -- dest[destPos + length]
 ```
-2. subList(int fromIndex, int toIndex)
+* subList(int fromIndex, int toIndex)
 
 消除对ArrayList范围操作的需要
 
@@ -190,7 +190,7 @@ list.add(2d);
   System.out.println(list);
   //output： [1.0, 4.0, 5.0]
 ```
-3. removeIf(Predicate<? super E> filter) 
+* removeIf(Predicate<? super E> filter) 
 
 ```java
  //1.8新增的方法
