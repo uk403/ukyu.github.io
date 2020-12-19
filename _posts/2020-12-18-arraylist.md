@@ -140,6 +140,7 @@ list.add(2d);
 
 ## 其中的一些方法
 1. System.arrayCopy()
+
 ```java 
     public void add(int index, E element) {
         ...
@@ -156,12 +157,14 @@ list.add(2d);
     }
 ```
 对elementData的操作很多地方都用到了System.arrayCopy()
+
 ```java
     public static native void arraycopy(Object src,  int  srcPos,
                                         Object dest, int destPos,
                                         int length);
 ```
 使用:
+
 ```java
   int[] a = {1, 2, 3, 4, 5};
   int[] b = {0, 0, 0, 0, 0, 6, 8, 9, 10};
@@ -175,6 +178,7 @@ list.add(2d);
 2. subList(int fromIndex, int toIndex)
 
 消除对ArrayList范围操作的需要
+
 ```java
   ArrayList<Double> list = new ArrayList<>();
   list.add(1d);
@@ -187,6 +191,7 @@ list.add(2d);
   //output： [1.0, 4.0, 5.0]
 ```
 3. removeIf(Predicate<? super E> filter) 
+
 ```java
  //1.8新增的方法
   ArrayList<Double> list = new ArrayList<>();
@@ -214,6 +219,7 @@ list.add(2d);
 对modCount的增加在发生结构化改变时，**就是为了得到一个fail-first行为的iterator(和 list iterator)**
 
 ### 2. 数组的最大容量
+
 ```java
     /**
      * A constant holding the maximum value an {@code int} can
@@ -232,7 +238,6 @@ list.add(2d);
 ```
 
 ```java
-
 // 想测试最大的容量，得到了下面的错.
 ArrayList<String> list = new ArrayList<>(Integer.MAX_VALUE - 8);
 // output:
