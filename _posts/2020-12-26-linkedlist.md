@@ -1,7 +1,7 @@
 ---
 title: java集合(3)-LinkedList
 layout: post
-date: 2020-12-18
+date: 2020-12-26
 tags: 
 - java集合
 categories:
