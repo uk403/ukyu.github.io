@@ -8,6 +8,9 @@ categories:
 - programmer
 ---  
 上节，我们讲了[AQS](https://www.cnblogs.com/ukyu/p/14775600.html)的阻塞与释放实现原理，线程间通信(**Condition**)的原理。这次，我们就讲讲基于**AQS**实现的**ReentrantLock**(重入锁)。
+
+<!-- more -->
+
 # 1. 介绍
 ![ReentrantLock类图](https://raw.githubusercontent.com/uk403/diagrams/main/blog/2021-05-24-ReentrantLock/ReentrantLock%E7%B1%BB%E5%9B%BE.png)
 结合上面的**ReentrantLock**类图，**ReentrantLock**实现了**Lock**接口，它的内部类**Sync**继承自**AQS**，绝大部分使用**AQS的子类**需要**自定义的方法**存在**Sync**中。而**ReentrantLock**有公平与非公平的区别，即'是否先阻塞就先获取资源'，它的主要实现就是**FairSync**与**NonfairSync**，后面会从源码角度看看它们的区别。
