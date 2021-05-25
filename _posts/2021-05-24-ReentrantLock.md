@@ -210,7 +210,43 @@ static final class FairSync extends Sync {
     }
 ```
 
+结合下面的入队代码(**enq**), 我们分析**hasQueuedPredecessors**为**true**的情况:
+1. ***h != t*** ,表示此时**queue**不为空; ***(s = h.next) == null***, 表示另一个结点已经运行了**下面的步骤(2)**，还没来得及运行**步骤(3)**。简言之，就是B线程想要获取锁的同时，A线程获取锁失败刚好在入队(*B入队的同时，之前占有的资源的线程，刚好释放资源*)
+2. ***h != t*** 且 ***(s = h.next) ！= null***，表示此时至少有一个结点在**sync queue**中；***s.thread != Thread.currentThread()***，这个情况比较复杂，设想一下有这三个结点 **A -> B C**， **A**此时获取到资源，而**B**此时因为获取资源失败正在**sync queue**阻塞，**C**还没有获取资源(还没有执行**tryAcquire**)。
+
+   2.1 时刻一：**A**释放资源成功后(执行**tryRelease**成功)，**B**此时还没有成功获取资源(**C**执行***s = h.next***时，**B**还在**sync queue**中且是**老二**)
+ 
+   2.2 时刻二: **C**此时执行**hasQueuedPredecessors**，***s.thread != Thread.currentThread()***成立，此时**s.thread**表示的是 **B**
+
+```java
+    private Node enq(final Node node) {
+        for (;;) {
+            Node t = tail;
+            if (t == null) { // Must initialize
+                if (compareAndSetHead(new Node())) // (1) 第一次初始化
+                    tail = head;
+            } else {
+                node.prev = t;
+                if (compareAndSetTail(t, node)) { // (2) 设置queue的tail
+                    t.next = node; // (3)
+                    return t;
+                }
+            }
+        }
+    }
+```
+
+> Note that 1. because cancellations due to interrupts and timeouts may occur at any time, a true return does not guarantee that some other thread will acquire before the current thread（虚假true）. 2. Likewise, it is possible for another thread to win a race to enqueue after this method has returned false, due to the queue being empty（虚假false）.
+
+这位[大佬](https://blog.csdn.net/anlian523/article/details/106173860)对**hasQueuedPredecessors**进行详细的分析，他文中解释了**虚假true**以及**虚假false**。我这里简单解释一下:
+1. **虚假true**, 当两个线程都执行**tryAcquire**，都执行到**hasQueuedPredecessors**，都返回**true**，但是只有一个线程执行 **compareAndSetState(0, acquires)** 成功
+2. **虚假false**，当一个**线程A**执行**doAcquireInterruptibly**，发生了中断，还没有清除掉被该结点时；此时，**线程B**执行**hasQueuedPredecessors**时，返回true
+
 # 3. 总结
 本文介绍了利用AQS实现的锁**ReetrantLock**
 * 讲解了**tryRelease**与**tryAcquire**的实现原理
 * 说了说**锁的公平与否**的实现，是否在意**当前线程是否有其他线程排队**
+* 分析了一下**hasQueuedPredecessors**的几种情况
+
+# 4. 参考
+* [AQS深入理解 hasQueuedPredecessors源码分析 JDK8](https://blog.csdn.net/anlian523/article/details/106173860)
