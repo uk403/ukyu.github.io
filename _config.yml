@@ -4,7 +4,7 @@
 # ---------------------------------------------------------------
 
 # Site
-title: cool😎 blog
+title: cool 😎 blog
 subtitle: ??子标题
 description: 纵浪大化中，不喜亦不惧
 author: ukyu
@@ -286,11 +286,11 @@ links_title: 值得一看的博客
 links_layout: block
 links_layout: inline
 links:
-'小米信息部技术团队': https://xiaomi-info.github.io/
-'美团技术团队': https://tech.meituan.com/
-'Martin Fowler': https://martinfowler.com/
-'左子祯': https://zuozizhen.com/
-'雷军的博客': http://leijun.blog.techweb.com.cn/
+-'小米信息部技术团队': https://xiaomi-info.github.io/
+-'美团技术团队': https://tech.meituan.com/
+-'Martin Fowler': https://martinfowler.com/
+-'左子祯': https://zuozizhen.com/
+-'雷军的博客': http://leijun.blog.techweb.com.cn/
 
 # ---------------------------------------------------------------
 # Post Settings
