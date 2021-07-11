@@ -175,7 +175,7 @@ font:
   global:
     # external: true will load this font family from host.
     external: true
-    family: Lato
+    family: Consolas
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
@@ -215,8 +215,8 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  Email: mailto:ukyu.liu@foxmail.com
-
+  Email: mailto:ukyu233@gmail.com
+  Twitter: https://twitter.com/ukyuliu
 
 # Social Links Icons
 # Icon Mapping:
@@ -282,12 +282,15 @@ sidebar:
 
 
 # Blog rolls
-links_title: 友链
+links_title: 值得一看的博客
 links_layout: block
 links_layout: inline
 links:
-    
-
+'小米信息部技术团队': https://xiaomi-info.github.io/
+'美团技术团队': https://tech.meituan.com/
+'Martin Fowler': https://martinfowler.com/
+'左子祯': https://zuozizhen.com/
+'雷军的博客': http://leijun.blog.techweb.com.cn/
 
 # ---------------------------------------------------------------
 # Post Settings
@@ -318,7 +321,7 @@ post_meta:
 # Post wordcount display settings
 post_wordcount:
   item_text: true
-  wordcount: false
+  wordcount: true
   min2read: false
   separated_meta: true
 
@@ -330,7 +333,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -535,14 +538,15 @@ busuanzi_count:
   enable: false
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i>
-  site_uv_footer:
+  site_uv_header: 本站访客数-
+  # <i class="fa fa-user"></i>
+  site_uv_footer: -人次
   # custom pv span for the whole site
-  site_pv: true
+  site_pv: false
   site_pv_header: <i class="fa fa-eye"></i>
   site_pv_footer:
   # custom pv span for one page only
-  page_pv: true
+  page_pv: false
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer:
 
